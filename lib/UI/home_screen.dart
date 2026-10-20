@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -13,7 +12,7 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 20),
+              const SizedBox(height: 15),
 
               const Text(
                 'わすれものチェック',
@@ -28,10 +27,7 @@ class HomeScreen extends StatelessWidget {
 
               const Text(
                 'お出かけ前に、持ち物を確認しよう！',
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Color(0xFF77776F),
-                ),
+                style: TextStyle(fontSize: 14, color: Color(0xFF77776F)),
               ),
 
               const SizedBox(height: 30),
@@ -70,10 +66,7 @@ class HomeScreen extends StatelessWidget {
 
               const Text(
                 '持ち物リスト',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
 
               const SizedBox(height: 12),
@@ -82,36 +75,18 @@ class HomeScreen extends StatelessWidget {
                 icon: Icons.account_balance_wallet_outlined,
                 name: '財布',
               ),
-              const ItemCard(
-                icon: Icons.smartphone,
-                name: 'スマートフォン',
-              ),
-              const ItemCard(
-                icon: Icons.vpn_key_outlined,
-                name: '鍵',
-              ),
-              const ItemCard(
-                icon: Icons.water_drop_outlined,
-                name: '水筒',
-              ),
+              const ItemCard(icon: Icons.smartphone, name: 'スマートフォン'),
+              const ItemCard(icon: Icons.vpn_key_outlined, name: '鍵'),
+              const ItemCard(icon: Icons.water_drop_outlined, name: '水筒'),
 
               const Spacer(),
 
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  BottomItem(
-                    icon: Icons.home_rounded,
-                    label: 'ホーム',
-                  ),
-                  BottomItem(
-                    icon: Icons.checklist_rounded,
-                    label: 'リスト',
-                  ),
-                  BottomItem(
-                    icon: Icons.settings_outlined,
-                    label: '設定',
-                  ),
+                  BottomItem(icon: Icons.home_rounded, label: 'ホーム'),
+                  BottomItem(icon: Icons.checklist_rounded, label: 'リスト'),
+                  BottomItem(icon: Icons.settings_outlined, label: '設定'),
                 ],
               ),
 
@@ -128,43 +103,23 @@ class ItemCard extends StatelessWidget {
   final IconData icon;
   final String name;
 
-  const ItemCard({
-    super.key,
-    required this.icon,
-    required this.name,
-  });
+  const ItemCard({super.key, required this.icon, required this.name});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(bottom: 10),
-      padding: const EdgeInsets.symmetric(
-        horizontal: 16,
-        vertical: 14,
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
       ),
       child: Row(
         children: [
-          Icon(
-            icon,
-            size: 26,
-            color: const Color(0xFF78947D),
-          ),
+          Icon(icon, size: 26, color: const Color(0xFF78947D)),
           const SizedBox(width: 14),
-          Expanded(
-            child: Text(
-              name,
-              style: const TextStyle(fontSize: 16),
-            ),
-          ),
-          Icon(
-            Icons.circle_outlined,
-            color: Colors.grey,
-            size: 23,
-          ),
+          Expanded(child: Text(name, style: const TextStyle(fontSize: 16))),
+          Icon(Icons.circle_outlined, color: Colors.grey, size: 23),
         ],
       ),
     );
@@ -175,27 +130,16 @@ class BottomItem extends StatelessWidget {
   final IconData icon;
   final String label;
 
-  const BottomItem({
-    super.key,
-    required this.icon,
-    required this.label,
-  });
+  const BottomItem({super.key, required this.icon, required this.label});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Icon(
-          icon,
-          size: 25,
-          color: const Color(0xFF66846C),
-        ),
+        Icon(icon, size: 25, color: const Color(0xFF66846C)),
         const SizedBox(height: 4),
-        Text(
-          label,
-          style: const TextStyle(fontSize: 12),
-        ),
+        Text(label, style: const TextStyle(fontSize: 12)),
       ],
     );
   }
